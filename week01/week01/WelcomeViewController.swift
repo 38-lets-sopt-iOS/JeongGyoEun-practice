@@ -44,6 +44,7 @@ class WelcomeViewController : UIViewController {
         button.titleLabel?.textColor = .white
         button.layer.cornerRadius = 6
         button.titleLabel?.font = UIFont(name: "Pretendard-SemiBold", size: 18)
+        button.addTarget(self, action: #selector(backToLoginButtonDidTap), for: .touchUpInside)
         return button
     }()
     override func viewDidLoad() {
@@ -56,5 +57,13 @@ class WelcomeViewController : UIViewController {
         view.addSubview(titleLabel)
         view.addSubview(mainButton)
         view.addSubview(reloginButton)
+    }
+    @objc
+    private func backToLoginButtonDidTap() {
+        if self.navigationController == nil {
+            self.dismiss(animated: true)
+        } else {
+            self.navigationController?.popViewController(animated: true)
+        }
     }
 }
