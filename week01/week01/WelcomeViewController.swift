@@ -66,4 +66,8 @@ class WelcomeViewController : UIViewController {
             self.navigationController?.popViewController(animated: true)
         }
     }
+    func configure(id: String?){
+        self.id = id
+        titleLabel.text = "\(id ?? "알 수 없음")님\n반가워요!"
+    }
 }
