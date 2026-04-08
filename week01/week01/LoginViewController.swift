@@ -26,6 +26,7 @@ class LoginViewController: UIViewController {
         textField.font = UIFont(name: "Pretendard-SemiBold", size: 14)
         textField.backgroundColor = UIColor(red: 221/255, green: 222/255, blue: 227/255, alpha : 1)
         textField.layer.cornerRadius = 3
+        textField.clearButtonMode = .whileEditing
         return textField
     }()
     
@@ -37,6 +38,7 @@ class LoginViewController: UIViewController {
         textField.font = UIFont(name: "Pretendard-SemiBold", size: 14)
         textField.backgroundColor = UIColor(red: 221/255, green: 222/255, blue: 227/255, alpha : 1)
         textField.layer.cornerRadius = 3
+        textField.isSecureTextEntry = true
         return textField
     }()
     
