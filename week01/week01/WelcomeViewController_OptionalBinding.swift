@@ -8,7 +8,7 @@
 import UIKit
 
 
-class WelcomeViewController : UIViewController {
+class WelcomeViewController_OptionalBinding : UIViewController {
     private var id: String?
     
     let dangenImage : UIImageView = {
