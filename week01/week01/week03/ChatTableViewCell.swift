@@ -84,3 +84,13 @@ class ChatTableViewCell: UITableViewCell {
     }
     
 }
+
+extension ChatTableViewCell {
+    func dataBind(_ chatData: ChatModel) {
+        profileImageView.image = chatData.profileImg
+        nameLabel.text = chatData.name
+        placeLabel.text = chatData.place
+        chatLabel.text = chatData.message
+        itemImageView.image = chatData.itemImg
+    }
+}
