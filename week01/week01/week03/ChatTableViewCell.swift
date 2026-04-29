@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 import Then
 
+
 class ChatTableViewCell: UITableViewCell {
     
     static let identifier = "ChatTableViewCell"
@@ -82,7 +83,6 @@ class ChatTableViewCell: UITableViewCell {
             $0.size.equalTo(40)
         }
     }
-    
 }
 
 extension ChatTableViewCell {
