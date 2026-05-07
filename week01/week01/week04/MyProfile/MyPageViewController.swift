@@ -1,5 +1,5 @@
 //
-//  MyPageViewController.swift
+//  MyProfileViewController.swift
 //  week01
 //
 //  Created by 정교은 on 5/8/26.
@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Then
 
-final class MyPageViewController : UIViewController {
+final class MyProfileViewController : UIViewController {
     private let titleLabel = UILabel()
     private let idTextField = UITextField()
     private let nameTextField = UITextField()
@@ -174,7 +174,7 @@ final class MyPageViewController : UIViewController {
     }
 }
 
-extension MyPageViewController {
+extension MyProfileViewController {
     @objc
     private func textFieldDidEditingChanged(_ textField: UITextField) {
         switch textField {
