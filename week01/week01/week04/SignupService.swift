@@ -4,6 +4,7 @@
 //
 //  Created by 정교은 on 5/2/26.
 //
+
 import Foundation
 
 final class SignupService {
@@ -105,4 +106,3 @@ final class SignupService {
            return NetworkError(rawValue: errorCode) ?? NetworkError.unknownError
        }
 }
-
