@@ -122,7 +122,7 @@ extension LoginAPIViewController {
                 )
 
                 let userId = response.data.userId
-                self.navigationController?.pushViewController(MyPageViewController(userId: userId), animated: true)
+                self.navigationController?.pushViewController(MyProfileViewController(userId: userId), animated: true)
                 print("로그인 성공")
             } catch {
                 let alert = UIAlertController(
