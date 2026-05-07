@@ -15,11 +15,7 @@ struct MyProfileResponseDTO: Decodable {
     let data : ProfileData
 }
 
-struct ProfileData: Decodable {
-    let users : [UserProfileData]
-}
-
-struct UserProfileData : Decodable {
+struct ProfileData : Decodable {
     let id : Int
     let loginId : String
     let name: String
