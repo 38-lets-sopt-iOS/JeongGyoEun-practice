@@ -86,10 +86,10 @@ final class MyProfileViewController : UIViewController {
     
     private func setLayout() {
         titleLabel.snp.makeConstraints {
-               $0.top.equalTo(view.safeAreaLayoutGuide).offset(50)
-               $0.centerX.equalToSuperview()
-
-           }
+            $0.top.equalTo(view.safeAreaLayoutGuide).offset(50)
+            $0.centerX.equalToSuperview()
+            
+        }
         idTextField.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom).offset(40)
             $0.horizontalEdges.equalToSuperview().inset(20)
@@ -196,6 +196,37 @@ extension MyProfileViewController {
     @objc
     private func updateButtonDidTap() {
         Task {
+            do {
+                let response = try await UpdateMyProfileService.shared.patchMyProfile(
+                    userId: userId,
+                    name: name,
+                    email: email,
+                    age: age
+                )
+                
+                profileData = response
+                updateUI(profileData: response)
+                
+                print("개인정보 수정 성공: \(response)")
+                let alert = UIAlertController(
+                    title: "수정 완료!", message:"정보를 성공적으로 수정했어요.", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "확인", style: .default)
+                alert.addAction(okAction)
+                self.present(alert, animated: true)
+                
+            } catch {
+                let alert = UIAlertController(
+                    title: "개인정보 수정 실패",
+                    message: error.localizedDescription,
+                    preferredStyle: .alert
+                )
+                
+                let okAction = UIAlertAction(title: "확인", style: .default)
+                alert.addAction(okAction)
+                self.present(alert, animated: true)
+                
+                print("개인정보 수정 실패", error)
+            }
         }
     }
 }
