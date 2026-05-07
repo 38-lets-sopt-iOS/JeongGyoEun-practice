@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  SignupResponseDTO.swift
 //  sopt-assignment
 //
 //  Created by 정교은 on 5/2/26.
@@ -12,9 +12,4 @@ struct SignupResponseDTO: Decodable {
     let status: Int
     let message: String
     let code: String
-}
-
-struct ErrorResponseETO: Decodable {
-    let path: String
-    let timestamp: String
 }
