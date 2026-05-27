@@ -153,8 +153,6 @@
 /* Begin XCBuildConfiguration section */
 		7060C69A2F86B43B008BD556 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = 7060C6882F86B43A008BD556 /* week01 */;
-			baseConfigurationReferenceRelativePath = week04/Config.xcconfig;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -215,8 +213,6 @@
 		};
 		7060C69C2F86B43B008BD556 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = 7060C6882F86B43A008BD556 /* week01 */;
-			baseConfigurationReferenceRelativePath = week04/Config.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
