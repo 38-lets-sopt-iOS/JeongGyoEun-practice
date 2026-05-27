@@ -72,24 +72,22 @@ struct NavigationStackPractice: View {
 
 struct NavigationPathPractice: View {
     let ganadi = Ganadi.friends
-    @State private var path = NavigationPath() // path 선언
+    @State private var path = NavigationPath()
     
     var body: some View {
-            // path를 NavigationStack에 연결하는 법
         NavigationStack(path: $path) {
             List(ganadi, id: \.self) { friend in
                 Button(friend.name) {
-                    path.append(friend) // 버튼을 누르면 Ganadi 구조체가 path에 들어감
+                    path.append(friend)
                 }
             }
-            .navigationTitle("\(path.count)번째 view") // 타이틀
+            .navigationTitle("\(path.count)번째 view")
             
-            // path에 담긴 타입을 보고 그에 맞는 View로 이동
             .navigationDestination(for: Ganadi.self) { ganadi in
-                EmojiView(ganadi: ganadi, path: $path) // path가 Ganadi라면 EmojiView로 이동
+                EmojiView(ganadi: ganadi, path: $path)
             }
             .navigationDestination(for: String.self) { info in
-                InfoView(info: info, path: $path) // path가 String이라면 InfoView로 이동
+                InfoView(info: info, path: $path)
             }
         }
     }
@@ -117,8 +115,7 @@ struct DetailView: View {
 
 struct EmojiView: View {
     let ganadi: Ganadi
-    @Binding var path: NavigationPath // path를 Binding으로 받음
-    // path는 루트 뷰에서 선언되었기 때문에, 하위 뷰에서 수정하려면 @Binding으로 받아야 함!
+    @Binding var path: NavigationPath
     
     var body: some View {
         VStack {
@@ -142,7 +139,7 @@ struct InfoView: View {
             Text(info)
             
             Button("루트로 돌아가기") {
-                path.removeLast(path.count) // path가 빈 배열이 되면서 루트로 이동
+                path.removeLast(path.count) 
             }
         }
         .navigationTitle("\(path.count)번째 view")

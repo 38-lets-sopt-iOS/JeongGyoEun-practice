@@ -11,7 +11,7 @@ import SwiftUI
 struct SOPT_38_SwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            StoryScrollView(chatUsers: users)
+            NavigationPathPractice()
         }
     }
 }
